@@ -38,7 +38,7 @@
                 <p>Laboratórios</p> 
             </div>
             <h4 class="titulosMenus">CADASTROS</h4>
-            <a href="./cadastros/clientes.html" style="text-decoration: none;">
+            <a href="" style="text-decoration: none;">
                 <div class="menus-container">
                     <div class="iconMenus">
                         <i class="fa-solid fa-plus"></i>
@@ -53,7 +53,7 @@
                 <p>Padrões 5S</p>
             </div>
             <div class="separador" style="margin-top: 50vh; margin-bottom: 1vh;"></div>
-            <a href="./login.html" style="text-decoration: none;">
+            <a href="../pages/login.html" style="text-decoration: none;">
                 <div class="menus-container" id="sair">
                     <div class="iconMenus">
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
@@ -65,15 +65,15 @@
         </div>
         <div class="conteudoPrincipal">
             <div class="tituloTop">
-                <h1>Cadastro de Clientes</h1>
-                <div class="separador" style="margin-top: 1vh; background-color: rgb(178, 178, 178); width: 23vw;"></div>
-                <h4 class="titulosMenus" style="font-size: 2vh; margin-left: 0%;">Cadastre e gerencie seus clientes!</h4>
+                <h1>Cadastro de Laboratórios</h1>
+                <div class="separador" style="margin-top: 1vh; background-color: rgb(178, 178, 178); width: 28vw;"></div>
+                <h4 class="titulosMenus" style="font-size: 2vh; margin-left: 0%;">Cadastre e gerencie os laboratórios!</h4>
             </div>
             <div class="conteudo-container">
                 <div class="boxCadastrados">
                     <div class="boxCadastradosTop">
                         <div class="busca-container">
-                            <input type="text" placeholder="Busque por um cliente..." id="inputBusca">
+                            <input type="text" placeholder="Busque por um laboratório..." id="inputBusca">
                             <i class="fa-solid fa-magnifying-glass" id="iconLupa"></i>
                         </div>
                         <div class="filtra-container">
@@ -87,30 +87,34 @@
                         <table>
                             <thead>
                               <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Nome Laboratório</th>
+                                <th scope="col">Responsável</th>
+                                <th scope="col">Status 5S</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Apagar</th>
                               </tr>
                             </thead>
                             <tbody>
                               <tr>
-                                <td scope="row">1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <td scope="row">C209</td>
+                                <td>Antonio</td>
+                                <td class="status-container"><div class="statusAprovado">Aprovado</div></td>
+                                <td><div class="status-container"><i class="fa-solid fa-pen" id="editIcon"></i></div></td>
+                                <td><div class="status-container"><i class="fa-solid fa-trash-can" id="deleteIcon"></i></div></td>
                               </tr>
                               <tr>
-                                <td scope="row">2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
+                                <td scope="row">B211</td>
+                                <td>Nicolas</td>
+                                <td class="status-container"><div class="statusPendente">Pendente</div></td>
+                                <td><div class="status-container"><i class="fa-solid fa-pen" id="editIcon"></i></div></td>
+                                <td><div class="status-container"><i class="fa-solid fa-trash-can" id="deleteIcon"></i></div></td>
                               </tr>
                               <tr>
-                                <td scope="row">3</td>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>@social</td>
+                                <td scope="row">Audaces</td>
+                                <td>Otavio</td>
+                                <td class="status-container"><div class="statusReprovado">Reprovado</div></td>
+                                <td><div class="status-container"><i class="fa-solid fa-pen" id="editIcon"></i></div></td>
+                                <td><div class="status-container"><i class="fa-solid fa-trash-can" id="deleteIcon"></i></div></td>
                               </tr>
                             </tbody>
                           </table>
