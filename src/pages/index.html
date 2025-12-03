@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../assets/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/home.css">
     <title>Home</title>
 </head>
 <body>
@@ -63,7 +64,59 @@
            
         </div>
         <div class="conteudoPrincipal">
-            
+            <div class="tituloTop">
+                <h1>Cadastro de Clientes</h1>
+                <div class="separador" style="margin-top: 1vh; background-color: rgb(178, 178, 178); width: 23vw;"></div>
+                <h4 class="titulosMenus" style="font-size: 2vh; margin-left: 0%;">Cadastre e gerencie seus clientes!</h4>
+            </div>
+            <div class="conteudo-container">
+                <div class="boxCadastrados">
+                    <div class="boxCadastradosTop">
+                        <div class="busca-container">
+                            <input type="text" placeholder="Busque por um cliente..." id="inputBusca">
+                            <i class="fa-solid fa-magnifying-glass" id="iconLupa"></i>
+                        </div>
+                        <div class="filtra-container">
+                            <i class="fa-solid fa-filter" id="iconFiltro"></i>
+                        </div>
+                        <div class="botaoCadastro-container">
+                            <button id="botaoCadastro"><h4>Adicionar</h4></button>
+                        </div>
+                    </div>
+                    <div>
+                        <table>
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td scope="row">1</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                              </tr>
+                              <tr>
+                                <td scope="row">2</td>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                              </tr>
+                              <tr>
+                                <td scope="row">3</td>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>@social</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     
