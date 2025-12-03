@@ -1,0 +1,42 @@
+.boxCadastrados{
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.image-container{
+    width: 32.5vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.infos-container{
+    width: 32.5vw;
+    height: 80vh;
+}
+
+.boxImage{
+    width: 25vw;
+    height: 40vh;
+    border: 1px solid rgb(8, 21, 84);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#addImage{
+    background-color: rgb(8, 21, 84);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-top: 5vh;
+    border: 1px solid rgb(8, 21, 84);
+    width: 10vw;
+    height: 3vh;
+    font-weight: bolder;
+}
