@@ -5,7 +5,9 @@ let session = localStorage.getItem('dados.session');
 let noma = localStorage.getItem('dados.nome');
 
 entrar.addEventListener('click',async()=>{
-    console.log(usuario.value,senha.value);
+    if(!usuario.value || !senha){
+        return alert('Falta informações');
+    }
 
     const dado = {
         usuario : usuario.value,
