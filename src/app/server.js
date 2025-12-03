@@ -7,6 +7,17 @@ app.use(express.json());
 app.use(cors({origin:true,credentials:true}));
 const port = 3000;
 
+// Pra testar os bgl é preciso baixar o express, mysql2 e o cors na pasta app(Só usar o 'npm i ' pra todos)
+// Você também precisa abrir o scrpit.sql no Workbench e usar os comandos pra criar o banco
+// Lá no tabela dos professor no sql vai estar o usuario e a senha, caso você queria testar o login
+// 
+// 
+// 
+// 
+// 
+
+
+
 const sessions = new Map();
 function generateSessionId() {
     const timestamp = Date.now().toString(36);
