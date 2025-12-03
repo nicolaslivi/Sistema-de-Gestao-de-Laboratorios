@@ -29,3 +29,11 @@ INSERT INTO professor(nome,senha,usuario) VALUES
 INSERT INTO sala(IdDoProfessor,nomeSala,foto,instrucoes,padrao5S) VALUES
 (1,'Sala Teste','foto','instruções','Seiri'),
 (2,'Sala Teste2','fot2o','instruções2','Seiton');
+
+
+
+INSERT INTO sala(IdDoProfessor,nomeSala,foto,instrucoes,padrao5S) VALUES
+(1,'Sala Teste3','foto3','instruções3','Seiri');
+
+
+DELETE FROM sala WHERE idSala = 3;

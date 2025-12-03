@@ -23,7 +23,7 @@ function authenticate(req,res,next){
     const session = sessions.get(token);
     console.log('Passou ', session);
     if(!session) return res.status(401).send('Sessão inválida');
-    req.user = {id: session.idUsuarios,email: session.email};
+    req.user = {id: session.idProfessor,usuario: session.usuario};
     next();
 }
 
@@ -36,6 +36,18 @@ app.get('/professores',async(req,res)=>{
         return res.status(500).send('Deu erro')
     }
 });
+
+app.get('/salas',async(req,res)=>{
+    try {
+        const [salas] = await db.query('SELECT sala.idSala,sala.idDoProfessor,sala.nomeSala,sala.padrao5S,professor.nome FROM sala JOIN professor ON sala.idDoProfessor = professor.idProfessor');
+        return res.status(201).send(salas);
+    } catch (error) {
+        console.error('Vish',error);
+        return res.status(500).send('Deu ruim',error);
+    }
+});
+
+
 
 
 app.post('/login',async(req,res)=>{
@@ -68,6 +80,21 @@ app.post('/logout',authenticate,(req,res)=>{
     console.log(sessions);
     return res.sendStatus(204);
 });
+
+app.delete('/deletar/sala/:id',async(req,res)=>{
+    const id = parseInt(req.params.id);
+    if(!id) return res.status(400).send('Falta Informação');
+    try {
+        const [apaga] = await db.query('DELETE FROM sala WHERE idSala = ?',[id]);
+        return res.status(204);
+    } catch (error) {
+        console.error('Vish',error);
+        return res.status(500).send('Ocorreu um problema');
+    }
+})
+
+
+
 
 app.listen(port,()=>{
     console.log(`Rodando na porta: ${port}`)

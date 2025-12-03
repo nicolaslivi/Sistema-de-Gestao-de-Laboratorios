@@ -1,14 +1,11 @@
 const usuario = document.getElementById('usuario');
 const senha = document.getElementById('senha');
+const errou = document.getElementById('errou');
 const entrar = document.getElementById('botaoEntrar');
 let session = localStorage.getItem('dados.session');
 let noma = localStorage.getItem('dados.nome');
 
 entrar.addEventListener('click',async()=>{
-    if(!usuario.value || !senha){
-        return alert('Falta informações');
-    }
-
     const dado = {
         usuario : usuario.value,
         senha: senha.value
@@ -33,15 +30,23 @@ entrar.addEventListener('click',async()=>{
             localStorage.setItem('dados.session',data.sessionId);
             noma = localStorage.getItem('dados.nome');
             session = localStorage.getItem('dados.session');
-            window.location.href = 'index.html';
+            return window.location.href = 'index.html';
             
         })
         .catch(error=>{
             console.error('Erro ao buscar dados:', error)
         })
+        if(!session){
+            errou.style.visibility = 'visible'
+            return alert('Credenciais inválidas');
+        }
 });
 console.log(session);
 
 // localStorage.removeItem('dados.session');
 // localStorage.removeItem('dados.nome');
 // session = null;
+
+document.addEventListener('DOMContentLoaded',()=>{
+    errou.style.visibility = 'hidden';
+});

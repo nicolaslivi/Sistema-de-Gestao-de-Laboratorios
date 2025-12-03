@@ -279,13 +279,24 @@ table {
     cursor: pointer;
 }
 
-#deleteIcon{
+/* .deleteIcon{
+    
+} */
+
+/* .deleteIcon:hover{
+    
+} */
+
+#tabela{
+    cursor: pointer;
+}
+.status-container i{
     border-radius: 100px;
     color: rgb(8, 21, 84);
     transition: 0.4s;
 }
 
-#deleteIcon:hover{
+.status-container i:hover{
     font-size: 3vh;
     cursor: pointer;
     color: red;
