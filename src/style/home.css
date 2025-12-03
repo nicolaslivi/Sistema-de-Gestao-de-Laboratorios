@@ -275,7 +275,7 @@ table {
 }
 
 #editIcon:hover{
-    font-size: 3vh;
+    color: rgb(95, 106, 160);
     cursor: pointer;
 }
 
@@ -297,7 +297,6 @@ table {
 }
 
 .status-container i:hover{
-    font-size: 3vh;
     cursor: pointer;
     color: red;
 }
