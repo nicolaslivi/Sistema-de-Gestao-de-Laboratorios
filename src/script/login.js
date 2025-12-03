@@ -39,3 +39,7 @@ entrar.addEventListener('click',async()=>{
         })
 });
 console.log(session);
+
+// localStorage.removeItem('dados.session');
+// localStorage.removeItem('dados.nome');
+// session = null;
