@@ -1,5 +1,5 @@
 .boxCadastrados{
-    height: 80vh;
+    height: 75vh;
     display: flex;
     flex-direction: row;
 }
@@ -15,7 +15,7 @@
 
 .infos-container{
     width: 32.5vw;
-    height: 80vh;
+    height: 75vh;
     border-right: 1px solid rgb(8, 21, 84);
 }
 
@@ -38,7 +38,7 @@
     margin-top: 5vh;
     border: 1px solid rgb(8, 21, 84);
     width: 8vw;
-    height: 3vh;
+    height: 6vh;
     font-weight: bolder;
     transition: 0.4s;
 }
@@ -82,8 +82,8 @@
     border-radius: 5px;
     border: 1px solid rgb(8, 21, 84);
     font-weight: bolder;
-    height: 5vh;
-    width: 10vw;
+    height: 6vh;
+    width: 12vw;
     cursor: pointer;
     transition: 0.4s;
 }
@@ -102,7 +102,7 @@
     margin-top: 5vh;
     border: 1px solid red;
     width: 8vw;
-    height: 3vh;
+    height: 6vh;
     font-weight: bolder;
     transition: 0.4s;
 }

@@ -1,2 +1,2 @@
-# Sistema-de-Gest-o-de-Laborat-rios
+# Sistema-de-Gestao-de-Laboratorios
 SA da UC de Desenvolvimento de Sistemas

@@ -1,8 +1,6 @@
 main{
     display: flex;
-    justify-content: start;
-    align-items: start;
-    
+    flex-direction: row;
 }
 
 .barraLateral{
@@ -102,8 +100,8 @@ main{
 }
 
 .conteudo-container{
-    height: 90vh;
-    width: 79.9vw;
+    height: 80vh;
+    width: 78vw;
     display: flex;
     align-items: center;
     justify-content: center;
