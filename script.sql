@@ -1,5 +1,6 @@
 CREATE DATABASE IF NOT EXISTS laboratorios_senai;
 
+use laboratorios_senai;
 
 CREATE TABLE IF NOT EXISTS professor(
 	idProfessor int not null primary key auto_increment,
