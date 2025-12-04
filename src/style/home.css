@@ -299,3 +299,23 @@ table {
     cursor: pointer;
     color: red;
 }
+
+/* Estilo para a tag dialog (o modal em si) */
+#modal-filtro {
+    border: none;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Estilo para o backdrop/overlay */
+  #modal-filtro::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Estilo básico para o botão de fechar */
+  #fechar-modal {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
