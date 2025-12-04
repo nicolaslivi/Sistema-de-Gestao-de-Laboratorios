@@ -7,36 +7,49 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="shortcut icon" href="../assets/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../style/login.css">
-    <title>Entrar</title>
+    <link rel="stylesheet" href="../style/novoUser.css">
+    <title>Cadastrar-se</title>
 </head>
 <body>
     <main>
         <div class="conteudoPrincipal">
             <div class="divisaoConteudoPrincipal">
+                <a href="../pages/login.html" style="height: 2.5vh;">
+                    <i class="fa-solid fa-arrow-down fa-rotate-90" id="setaVoltar" style="color: rgb(8, 21, 84);"></i>
+                </a>
                 <div class="iconEscola-container">
                     <i class="fa-solid fa-people-roof" id="iconEscola">
                         <h3 style="font-size: 2vh;">Gerenciador de Laboratórios</h3>
                     </i>
                 </div>
                 <div class="login-container">
-                    <h2 style="margin-right: 5vw;">Seja Bem-Vindo!</h2>
-                    <p style="font-size: 1.5vh; color: rgb(118, 118, 118);">Acesse sua conta para gerenciar os laboratórios do Senai!</p>
+                    <h2 style="margin-right: 5vw; font-size: 2vh;">Preencha os campos abaixo</h2>
+                    <p style="font-size: 1.5vh; color: rgb(118, 118, 118);">Cadastre-se para gerenciar seus laboratórios</p>
                     <form id="formularioLogin">
                         <div class="mb-3" id="dados-container">
+                            <label for="exampleInputEmail1" class="form-label" style="height: 2vh;">Nome</label>
+                            <input type="text" class="form-control" id="usuario" aria-describedby="emailHelp" style="height: 5vh;" placeholder="Digite seu nome...">
+                          </div>
+                        <div class="mb-3" id="dados-container">
                           <label for="exampleInputEmail1" class="form-label" style="height: 2vh;">Usuário</label>
-                          <input type="text" class="form-control" id="usuario" aria-describedby="emailHelp" style="height: 5vh;">
+                          <input type="text" class="form-control" id="usuario" aria-describedby="emailHelp" style="height: 5vh;" placeholder="Crie um nome de usuário...">
                         </div>
                         <div class="mb-3" id="dados-container">
                           <label for="exampleInputPassword1" class="form-label" style="height: 2vh;">Senha</label>
-                          <input type="password" class="form-control" id="senha" style="height: 5vh;">
+                          <input type="password" class="form-control" id="senha" style="height: 5vh;" placeholder="Crie sua senha...">
                         </div>
                     </form>
                     <br>
                     <br>
                     <br>
-                    <a href="./novoUser.html" style="font-size: 1vh;">Não possui um cadastro? Clique aqui.</a>
                     <br>
-                    <button type="submit" class="btn btn-primary" id="botaoEntrar">Entrar</button>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="./login.html" style="text-decoration: none;">
+                        <button type="submit" class="btn btn-primary" id="botaoEntrar">Cadastrar-se</button>
+                    </a>
                 </div>
             </div>
         </div>
