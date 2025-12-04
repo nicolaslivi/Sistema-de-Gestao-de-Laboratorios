@@ -76,8 +76,8 @@ main{
 
 #errou{
     position: absolute;
-    top: 62vh;
-    right: 41vw;
+    top: 59vh;
+    right: 41.5vw;
     font-size: 12px;
     visibility: hidden;
     color: red;

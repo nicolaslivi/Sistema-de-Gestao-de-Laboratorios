@@ -3,13 +3,14 @@ const inputBusca = document.getElementById('inputBusca');
 const lupa = document.getElementById('iconLupa');
 let session = localStorage.getItem('dados.session');
 let noma = localStorage.getItem('dados.nome');
+let idProfessor = localStorage.getItem('dados.idProfessor');
 const nome = document.getElementById('name');
 const sair = document.getElementById('sair');
 let tabela = document.getElementById('tabela');
 
 
 
-
+console.log(idProfessor);
 
 sair.addEventListener('click',async()=>{
     fetch('http://localhost:3000/logout',{
@@ -72,30 +73,32 @@ lupa.addEventListener('click',async()=>{
 
 
 async function pegarId(id){
-    console.log(id)
-    fetch(`http://localhost:3000/deletar/sala/${id}`,{
-        method: 'DELETE',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
-   })
-        .then(response=>{
-                if(!response.ok){
-                    throw new Error(`Erro HTTP: ${response.status}`)
-                }
-                return response.json()
-        })
-        .then(data =>{
-                console.log(data);
-                
-                
-        })
-        .catch(error=>{
-            console.error('Erro ao buscar dados:',error);
-        })
-    alert('Sala deletada com sucesso');
-    window.location.reload();
+    console.log(id);
+    if(window.confirm('Você deseja apagar essa sala?')){
+        fetch(`http://localhost:3000/deletar/sala/${id}`,{
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+       })
+            .then(response=>{
+                    if(!response.ok){
+                        throw new Error(`Erro HTTP: ${response.status}`)
+                    }
+                    return response.json()
+            })
+            .then(data =>{
+                    console.log(data);
+            })
+            .catch(error=>{
+                console.error('Erro ao buscar dados:',error);
+            })
+        alert('Sala deletada com sucesso');
+        window.location.reload();
+    } else {
+        console.log('Blz');
+    }
 }
 
 

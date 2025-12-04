@@ -4,6 +4,7 @@ const errou = document.getElementById('errou');
 const entrar = document.getElementById('botaoEntrar');
 let session = localStorage.getItem('dados.session');
 let noma = localStorage.getItem('dados.nome');
+let idProfessor = localStorage.getItem('dados.idProfessor');
 
 entrar.addEventListener('click',async()=>{
     const dado = {
@@ -28,8 +29,10 @@ entrar.addEventListener('click',async()=>{
             console.log(data);
             localStorage.setItem('dados.nome',data.nome);
             localStorage.setItem('dados.session',data.sessionId);
+            localStorage.setItem('dados.idProfessor', data.user);
             noma = localStorage.getItem('dados.nome');
             session = localStorage.getItem('dados.session');
+            idProfessor = localStorage.getItem('dados.idProfessor');
             return window.location.href = 'index.html';
             
         })
