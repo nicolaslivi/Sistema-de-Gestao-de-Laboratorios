@@ -15,6 +15,7 @@ buttonAddLab.addEventListener('click',()=>{
         labInfo.push(inputsCadastro[x].value);
     }
     console.log(labInfo);
+
 })
 
 

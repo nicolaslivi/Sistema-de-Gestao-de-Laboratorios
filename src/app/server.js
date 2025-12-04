@@ -91,7 +91,18 @@ app.post('/logout',authenticate,(req,res)=>{
     console.log(sessions);
     return res.sendStatus(204);
 });
-
+app.post('/novoLab',async(req,res)=>{
+    let {nome,s5,prof,descri} = req.body;
+    if(!nome || !s5 || !prof || !descri){
+        return res.status(400).send('Falta Informação');
+    }
+    try {
+        const [novoLab] = await db.query('INSERT INTO sala(nome,)')
+    } catch (error) {
+        console.error('Vish',error);
+        return res.status(500).send('Erro interno do servidor ao buscar.')
+    }
+})
 app.delete('/deletar/sala/:id',async(req,res)=>{
     const id = parseInt(req.params.id);
     if(!id) return res.status(400).send('Falta Informação');
