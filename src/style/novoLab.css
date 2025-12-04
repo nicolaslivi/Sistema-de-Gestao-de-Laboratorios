@@ -16,6 +16,7 @@
 .infos-container{
     width: 32.5vw;
     height: 80vh;
+    border-right: 1px solid rgb(8, 21, 84);
 }
 
 .boxImage{
@@ -39,4 +40,55 @@
     width: 10vw;
     height: 3vh;
     font-weight: bolder;
+}
+
+#addImage:hover{
+    background-color: rgb(124, 135, 189);
+    color: rgb(8, 21, 84);
+    border: 1px solid rgb(124, 135, 189);
+}
+
+.inputsCadastro-container{
+    width: 32.5vw;
+    height: 10vh;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tituloInput{
+    margin-left: 2.5vw;
+    margin-bottom: 1.5vh;
+}
+
+.inputsCadastro{
+    padding-left: 0.4vw;
+    width: 26vw;
+    height: 3vh;
+    margin-left: 2.5vw;
+    border-radius: 5px;
+    border: 1px solid rgb(8, 21, 84);
+}
+
+#textarea{
+    resize: none;
+}
+
+#buttonAddLab{
+    background-color: rgb(8, 21, 84);
+    color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(8, 21, 84);
+    font-weight: bolder;
+    height: 5vh;
+    width: 10vw;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#buttonAddLab:hover{
+    background-color: rgb(124, 135, 189);
+    color: rgb(8, 21, 84);
+    border: 1px solid rgb(124, 135, 189);
 }
