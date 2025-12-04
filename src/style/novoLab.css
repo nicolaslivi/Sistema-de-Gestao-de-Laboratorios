@@ -37,9 +37,10 @@
     cursor: pointer;
     margin-top: 5vh;
     border: 1px solid rgb(8, 21, 84);
-    width: 10vw;
+    width: 8vw;
     height: 3vh;
     font-weight: bolder;
+    transition: 0.4s;
 }
 
 #addImage:hover{
@@ -91,4 +92,23 @@
     background-color: rgb(124, 135, 189);
     color: rgb(8, 21, 84);
     border: 1px solid rgb(124, 135, 189);
+}
+
+#deleteImage{
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-top: 5vh;
+    border: 1px solid red;
+    width: 8vw;
+    height: 3vh;
+    font-weight: bolder;
+    transition: 0.4s;
+}
+
+#deleteImage:hover{
+    background-color: rgb(255, 109, 109);
+    border: 1px solid rgb(255, 109, 109);
+    color: rgb(105, 12, 12);
 }
