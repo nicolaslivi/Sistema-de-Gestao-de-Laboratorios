@@ -42,7 +42,7 @@ sair.addEventListener('click',async()=>{
 
 
 
-lupa.addEventListener('click',async()=>{
+inputBusca.addEventListener('keyup',async()=>{
     if(!inputBusca.value) return window.location.reload();
     let linhaEdit = '<td><div class="status-container"><i class="fa-solid fa-pen" id="editIcon"></i></div></td>';
     // let linhaDelete = '<td><div class="status-container"><i class="fa-solid fa-trash-can" id="deleteIcon"></i></div></td>';
@@ -57,7 +57,7 @@ lupa.addEventListener('click',async()=>{
             
             tabela.innerHTML = '';
             for(let x = 0; x < data.length; x++){
-                if(data[x].nome.toLowerCase() == inputBusca.value.toLowerCase() || data[x].nomeSala.toLowerCase() == inputBusca.value.toLowerCase()){
+                if(data[x].nome.toLowerCase().includes(inputBusca.value.toLowerCase()) || data[x].nomeSala.toLowerCase().includes(inputBusca.value.toLowerCase())){
                     tabela.innerHTML += `<tr><td scope="row">${data[x].nomeSala}</td><td>${data[x].nome}</td><td class="status-container">${data[x].padrao5S}</td>${linhaEdit}<td><div class="status-container"><i class="fa-solid fa-trash-can" id="${data[x].idSala}" onclick="pegarId(id)"></i></div></td></tr>` 
                 }
             }
