@@ -10,11 +10,7 @@ const port = 3000;
 // Pra testar os bgl é preciso baixar o express, mysql2 e o cors na pasta app(Só usar o 'npm i ' pra todos)
 // Você também precisa abrir o scrpit.sql no Workbench e usar os comandos pra criar o banco
 // Lá no tabela dos professor no sql vai estar o usuario e a senha, caso você queria testar o login
-// 
-// 
-// 
-// 
-// 
+ 
 
 
 
@@ -89,15 +85,17 @@ app.post('/logout',authenticate,(req,res)=>{
     const token = header.slice(7);
     if(token && sessions.has(token)) sessions.delete(token);
     console.log(sessions);
-    return res.sendStatus(204);
+    return res.status(204);
 });
 app.post('/novoLab',async(req,res)=>{
-    let {nome,s5,prof,descri} = req.body;
-    if(!nome || !s5 || !prof || !descri){
+    let {idProfessor,nome,s5,descri} = req.body;
+    let foto = '1';
+    if(!nome || !s5 || !foto || !descri){
         return res.status(400).send('Falta Informação');
     }
     try {
-        const [novoLab] = await db.query('INSERT INTO sala(nome,)')
+        const [novoLab] = await db.query('INSERT INTO sala(IdDoProfessor,nomeSala,foto,instrucoes,padrao5S) VALUES (?,?,?,?,?)',[idProfessor,nome,foto,descri,s5]);
+        return res.status(204)
     } catch (error) {
         console.error('Vish',error);
         return res.status(500).send('Erro interno do servidor ao buscar.')
