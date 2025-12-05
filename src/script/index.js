@@ -128,3 +128,20 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     nome.innerText = `${noma}`
 });
+
+// 1. Capturar os elementos do DOM
+const modal = document.getElementById('modal-filtro');
+const abrirModalBtn = document.getElementById('iconFiltro');
+const fecharModalBtn = document.getElementById('fechar-modal');
+
+// 2. Adicionar evento para abrir o modal
+abrirModalBtn.addEventListener('click', () => {
+    // showModal() exibe o dialog e o backdrop
+    modal.showModal();
+});
+
+// 3. Adicionar evento para fechar o modal
+fecharModalBtn.addEventListener('click', () => {
+    // close() esconde o dialog
+    modal.close();
+});
