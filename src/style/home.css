@@ -308,7 +308,7 @@ table {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 55vw;
-    height: 47vh;
+    height: 65vh;
     top: 25%;
     left: 30%;
 }
@@ -361,4 +361,31 @@ table {
     font-size: 2.5vh;
     margin-top: 2vh;
     margin-bottom: 2vh;
+}
+
+#edit{
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 55vw;
+    height: 65vh;
+    top: 25%;
+    left: 30%;
+}
+
+#edit img{
+    width: 55vw;
+    height: 60vh;
+}
+#edit input{
+    width: 15vw;
+}
+#edit select{
+    width: 15.5vw;
+    height: 4vh;
+}
+
+/* Estilo para o backdrop/overlay */
+#edit::backdrop {
+    background-color: rgba(109, 109, 109, 0.5);
 }

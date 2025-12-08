@@ -83,16 +83,39 @@
                             <h2>Dados Sala</h2>
                             <br>
                             <div style="display: flex; flex-direction: column;">
-                                <label>Sala : </label>
+                                <label>Sala: </label>
                                 <input type="text" id ="nomeSala" disabled>
-                                <label>Responsável : </label>
+                                <label>Responsável: </label>
                                 <input type="text" id ="responsavel" disabled>
-                                <label>Padrão5s : </label>
+                                <label>Padrão5s: </label>
                                 <input type="text" id ="padrao5s" disabled>
                                 <label>Instruções</label>
                                 <textarea id="instru" disabled style=" resize: none; height: 10vh;"></textarea>
                                 <br>
                                 <img src="" id="foto">
+                            </div>
+                            <button id="fechar-modal">OK</button>
+                        </dialog>
+                        <dialog id="edit">
+                            <h2>Editar</h2>
+                            <br>
+                            <div style="display: flex; flex-direction: column;">
+                                <label>Sala : </label>
+                                <input type="text" id ="nomeSalaEdit">
+                                <label>Responsável : </label>
+                                <input type="text" id ="responsavelEdit">
+                                <label>Padrão5s : </label>
+                                <select id ="padrao5sEdit">
+                                    <option value="Seiri">Seiri</option>
+                                    <option value="Seiton">Seiton</option>
+                                    <option value="Seiso">Seiso</option>
+                                    <option value="Seiketsu">Seiketsu</option>
+                                    <option value="Shitsuke">Shitsuke</option>
+                                </select>
+                                <label>Instruções</label>
+                                <textarea id="instruEdit" style=" resize: none; height: 10vh;"></textarea>
+                                <br>
+                                <img src="" id="fotoEdit">
                             </div>
                             <button id="fechar-modal">OK</button>
                         </dialog>
