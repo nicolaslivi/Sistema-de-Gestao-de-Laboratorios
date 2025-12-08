@@ -13,9 +13,6 @@ const blockEdit = document.getElementById('edit');
 
 console.log(idProfessor);
 
-
-
-
 function editar(id){
     const nomeSala = document.getElementById('nomeSalaEdit');
     const responsavel = document.getElementById('responsavelEdit');
@@ -55,6 +52,17 @@ sair.addEventListener('click',async()=>{
             'Authorization': `Bearer ${session}`
         }
     })
+
+    if(window.confirm("Você deseja sair do sistema?")){
+        fetch('http://localhost:3000/logout',{
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${session}`
+            }
+        })
+    
         .then(response=>{
             if(!response.ok){
                 throw new Error(`Erro HTTP: ${response.status}`)
@@ -68,10 +76,13 @@ sair.addEventListener('click',async()=>{
         .catch(error=>{
             console.error('Erro ao buscar dados:', error)
         })
-    localStorage.removeItem('dados.session');
-    localStorage.removeItem('dados.nome');
-    session = null;
-    return window.location.href = 'login.html';
+        localStorage.removeItem('dados.session');
+        localStorage.removeItem('dados.nome');
+        session = null;
+        return window.location.href = 'login.html';
+    } else {
+        console.log('aqui.');
+    }
 });
 
 
@@ -205,4 +216,22 @@ const fecharModalBtn = document.getElementById('fechar-modal');
 fecharModalBtn.addEventListener('click', () => {
     // close() esconde o dialog
      modalfiltro.close();
+});
+
+// Aguarda o carregamento completo do DOM
+document.addEventListener('DOMContentLoaded', (event) => {
+    const button = document.getElementById('iconFiltro');
+    const popover = document.getElementById('myPopover');
+
+    // Alterna a visibilidade do popover ao clicar no botão
+    button.addEventListener('click', () => {
+        popover.classList.toggle('show');
+    });
+
+    // Opcional: Oculta o popover se o usuário clicar fora dele
+    document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !popover.contains(event.target)) {
+            popover.classList.remove('show');
+        }
+    });
 });
