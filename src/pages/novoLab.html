@@ -78,7 +78,14 @@
                         </div>
                         <div class="inputsCadastro-container">
                             <h5 class="tituloInput" style="margin-top: 2vh;">Padrão 5S</h5>
-                            <input type="text" class="inputsCadastro">
+                            <!-- <input type="" class="inputsCadastro"> -->
+                             <select name="5s" id="5s" class="inputsCadastro">
+                                <option value="Seiri">Seiri</option>
+                                <option value="Seiton">Seiton</option>
+                                <option value="Seiso">Seiso</option>
+                                <option value="Seiketsu">Seiketsu</option>
+                                <option value="Shitsuke">Shitsuke</option>
+                             </select>
                         </div>
                         <div class="inputsCadastro-container">
                             <h5 class="tituloInput" style="margin-top: 2vh;">Professor Responsável</h5>
@@ -89,7 +96,9 @@
                             <textarea class="inputsCadastro" style="height: 30vh; padding-top: 1vh;" id="textarea"></textarea>
                         </div>
                         <div class="inputsCadastro-container" style="align-items: center; margin-top: 2vh;">
-                            <button id="buttonAddLab">Adicionar Laboratório</button>
+                            <a href="" id="baixar" >
+                                <button id="buttonAddLab">Adicionar Laboratório</button>
+                            </a>
                         </div>
                     </div>
                     <div class="image-container">
@@ -97,8 +106,14 @@
                             <i class="fa-solid fa-image" style="color: rgb(195, 195, 195); font-size: 10vh;"></i>
                         </div>
                         <div>
-                            <button id="addImage">Adicionar imagem</button>
-                            <button id="deleteImage">Remover Imagem</button>
+                            <br>
+                            <input type="file" accept="image/png, image/jpeg" id="foto" name="foto_perfil">
+                            <div>
+                                <br>
+                                
+                                    <!-- <button id="addImage">Adicionar imagem</button> -->
+                                <!-- <button id="deleteImage">Remover Imagem</button> -->
+                            </div>
                         </div>
                     </div>
                 </div>

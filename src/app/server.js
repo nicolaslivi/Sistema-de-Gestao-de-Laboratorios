@@ -55,7 +55,17 @@ app.get('/salas',async(req,res)=>{
 });
 
 
-
+app.get('/sala/:id',async(req,res)=>{
+    const id = parseInt(req.params.id);
+    if(!id) return res.status(400).send('falta Informação');
+    try {
+        const [sala] = await db.query('SELECT sala.idSala,sala.idDoProfessor,sala.nomeSala,sala.padrao5S,sala.foto,sala.instrucoes,professor.nome FROM sala JOIN professor ON sala.idDoProfessor = professor.idProfessor WHERE idSala = ?',[id]);
+        return res.status(201).send(sala)
+    } catch (error) {
+        console.error('Vish',error);
+        return res.status(500).send('Deu ruim',error);
+    }
+})
 
 app.post('/login',async(req,res)=>{
     const {usuario,senha} = req.body;
@@ -88,8 +98,7 @@ app.post('/logout',authenticate,(req,res)=>{
     return res.status(204);
 });
 app.post('/novoLab',async(req,res)=>{
-    let {idProfessor,nome,s5,descri} = req.body;
-    let foto = '1';
+    let {idProfessor,nome,s5,descri,foto} = req.body;
     if(!nome || !s5 || !foto || !descri){
         return res.status(400).send('Falta Informação');
     }

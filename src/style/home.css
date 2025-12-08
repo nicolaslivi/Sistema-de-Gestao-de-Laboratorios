@@ -302,15 +302,24 @@ table {
 
 /* Estilo para a tag dialog (o modal em si) */
 #modal-filtro {
+    /* display: flex; */
+    /* flex-direction: column; */
     border: none;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 20vw;
-    height: 42vh;
+    width: 55vw;
+    height: 47vh;
     top: 25%;
-    left: 50%;
+    left: 30%;
 }
-  
+#modal-filtro img{
+    width: 55vw;
+    height: 60vh;
+}
+#modal-filtro input{
+    width: 15vw;
+
+}
 /* Estilo para o backdrop/overlay */
 #modal-filtro::backdrop {
     background-color: rgba(109, 109, 109, 0.5);

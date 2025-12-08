@@ -80,26 +80,19 @@
                             <i class="fa-solid fa-filter" id="iconFiltro"></i>
                         </div>
                         <dialog id="modal-filtro">
-                            <h2 style="margin-bottom: 3vh;">Filtre o padrão 5S</h2>
-                            <div class="checkboxMaisTexto">
-                                <input type="checkbox" class="checkbox">
-                                <p>Seiri (Senso de Utilização)</p>
-                            </div>
-                            <div class="checkboxMaisTexto">
-                                <input type="checkbox" class="checkbox">
-                                <p>Seiton (Senso de Ordenação)</p>
-                            </div>
-                            <div class="checkboxMaisTexto">
-                                <input type="checkbox" class="checkbox">
-                                <p>Seiso (Senso de Limpeza)</p>
-                            </div>
-                            <div class="checkboxMaisTexto">
-                                <input type="checkbox" class="checkbox">
-                                <p>Seiketsu (Senso de Padronização)</p>
-                            </div>
-                            <div class="checkboxMaisTexto">
-                                <input type="checkbox" class="checkbox">
-                                <p>Shitsuke (Senso de Disciplina)</p>
+                            <h2>Dados Sala</h2>
+                            <br>
+                            <div style="display: flex; flex-direction: column;">
+                                <label>Sala : </label>
+                                <input type="text" id ="nomeSala" disabled>
+                                <label>Responsável : </label>
+                                <input type="text" id ="responsavel" disabled>
+                                <label>Padrão5s : </label>
+                                <input type="text" id ="padrao5s" disabled>
+                                <label>Instruções</label>
+                                <textarea id="instru" disabled style=" resize: none; height: 10vh;"></textarea>
+                                <br>
+                                <img src="" id="foto">
                             </div>
                             <button id="fechar-modal">OK</button>
                         </dialog>
