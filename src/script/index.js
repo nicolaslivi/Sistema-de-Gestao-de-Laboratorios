@@ -14,14 +14,16 @@ console.log(idProfessor);
 
 
 sair.addEventListener('click',async()=>{
-    await fetch('http://localhost:3000/logout',{
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${session}`
-        }
-    })
+    if(window.confirm("Você deseja sair do sistema?")){
+        fetch('http://localhost:3000/logout',{
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${session}`
+            }
+        })
+    
         .then(response=>{
             if(!response.ok){
                 throw new Error(`Erro HTTP: ${response.status}`)
@@ -35,10 +37,13 @@ sair.addEventListener('click',async()=>{
         .catch(error=>{
             console.error('Erro ao buscar dados:', error)
         })
-    localStorage.removeItem('dados.session');
-    localStorage.removeItem('dados.nome');
-    session = null;
-    return window.location.href = 'login.html';
+        localStorage.removeItem('dados.session');
+        localStorage.removeItem('dados.nome');
+        session = null;
+        return window.location.href = 'login.html';
+    } else {
+        console.log('aqui.');
+    }
 });
 
 
