@@ -70,8 +70,37 @@
                             <input type="text" placeholder="Busque por um laboratório ou responsável..." id="inputBusca">
                             <i class="fa-solid fa-magnifying-glass" id="iconLupa"></i>
                         </div>
-                        <div class="filtra-container">
+                        <div class="filtra-container popover-container">
                             <i class="fa-solid fa-filter" id="iconFiltro"></i>
+                            <div class="popover" id="myPopover">
+                                <div class="conteudoPopover" style="margin-bottom: 5vh; margin-top: 2vh;">
+                                    <h5>Escolha o Padrão 5S desejado:</h5>
+                                </div>
+                                <div class="conteudoPopover">
+                                    <input type="checkbox">
+                                    <p style="margin-left: 1vw;">Seiri</p>
+                                </div>
+                                <div class="conteudoPopover">
+                                    <input type="checkbox">
+                                    <p style="margin-left: 1vw;">Seiton</p>
+                                </div>
+                                <div class="conteudoPopover">
+                                    <input type="checkbox">
+                                    <p style="margin-left: 1vw;">Seiso</p>
+                                </div>
+                                <div class="conteudoPopover">
+                                    <input type="checkbox">
+                                    <p style="margin-left: 1vw;">Shitsuke</p>
+                                </div>
+                                <div class="conteudoPopover">
+                                    <input type="checkbox">
+                                    <p style="margin-left: 1vw;">Seiri</p>
+                                </div>
+                                <div class="conteudoPopover" style="justify-content: space-between; margin-top: 5vh;">
+                                    <button id="buttonLimpar">Limpar</button>
+                                    <button id="buttonAplicar">Aplicar</button>
+                                </div>
+                            </div>
                         </div>
                         <dialog id="modal-filtro">
                             <h2>Dados Sala</h2>

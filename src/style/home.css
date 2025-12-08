@@ -149,10 +149,12 @@ main{
 }
 
 .filtra-container{
-    height: 10vh;
-    width: 22vw;
+    height: 7.5vh;
+    width: 2.5vw;
+    margin-left: 19.5vw;
+    margin-top: 2.5vh;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
 }
 
@@ -278,14 +280,6 @@ table {
     cursor: pointer;
 }
 
-/* .deleteIcon{
-    
-} */
-
-/* .deleteIcon:hover{
-    
-} */
-
 #tabela{
     cursor: pointer;
 }
@@ -361,4 +355,75 @@ table {
     font-size: 2.5vh;
     margin-top: 2vh;
     margin-bottom: 2vh;
+}
+
+.popover-container {
+    position: relative; /* Define o contexto de posicionamento para o popover  */
+    display: inline-block; /* Garante que o contêiner não ocupe a largura total */
+} 
+
+.popover {
+    display: none; /* Oculta o popover por padrão */
+    position: absolute;
+    right: 100%; /* Posiciona o popover à esquerda do limite direito do botão */
+    top: 50%; /* Alinha verticalmente o topo do popover com o meio do botão */
+    transform: translate(-10px, -50%); /* Ajuste fino: -10px de margem, -50% para centralização vertical */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    width: 150px; /* Largura do popover */
+    z-index: 100;
+}
+
+/* Classe para mostrar o popover com JavaScript */
+.popover.show {
+    display: block;
+}
+
+.conteudoPopover{
+    width: 150px;
+    height: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+    margin-bottom: 1.5vh;
+}
+
+#buttonLimpar{
+    width: 5vw;
+    height: 4vh;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid red;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#buttonLimpar:hover{
+    background-color: rgb(250, 131, 131);
+    color: rgb(60, 6, 6);
+    border: 1px solid rgb(250, 131, 131);
+}
+
+#buttonAplicar{
+    width: 5vw;
+    height: 4vh;
+    background-color: rgb(8, 21, 84);
+    color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(8, 21, 84);
+    font-weight: bolder;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#buttonAplicar:hover{
+    background-color: rgb(124, 135, 189);
+    color: rgb(8, 21, 84);
+    border: 1px solid rgb(124, 135, 189);
 }

@@ -174,3 +174,21 @@ fecharModalBtn.addEventListener('click', () => {
     // close() esconde o dialog
      modalfiltro.close();
 });
+
+// Aguarda o carregamento completo do DOM
+document.addEventListener('DOMContentLoaded', (event) => {
+    const button = document.getElementById('iconFiltro');
+    const popover = document.getElementById('myPopover');
+
+    // Alterna a visibilidade do popover ao clicar no botão
+    button.addEventListener('click', () => {
+        popover.classList.toggle('show');
+    });
+
+    // Opcional: Oculta o popover se o usuário clicar fora dele
+    document.addEventListener('click', (event) => {
+        if (!button.contains(event.target) && !popover.contains(event.target)) {
+            popover.classList.remove('show');
+        }
+    });
+});
