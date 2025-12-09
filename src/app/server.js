@@ -110,6 +110,34 @@ app.post('/novoLab',async(req,res)=>{
         return res.status(500).send('Erro interno do servidor ao buscar.')
     }
 })
+
+app.put('/editRoom/:id',async(req,res)=>{
+    const id = parseInt(req.params.id);
+    if(!id) return res.status(400).send('id inválido!');
+    const {nome,instrucoes,padrao5s,foto} = req.body;
+    if(!nome && !instrucoes && !padrao5s && !foto) return res.status(400).send('Mande pelo menos uma informação!');
+    try {
+        const [sala] = await db.query('SELECT * FROM sala WHERE idSala = ?',[id]);
+        if(nome){
+            const [alterRoomName] = await db.query('UPDATE sala SET nomeSala = ? WHERE idSala = ?',[nome,id]);
+        }
+        if(instrucoes){
+            const [alterRoomInstrucoes] = await db.query('UPDATE sala SET instrucoes = ? WHERE idSala = ?',[instrucoes,id]);
+        }
+        if(padrao5s){
+            const [alterRoompadrao5s] = await db.query('UPDATE sala SET padrao5S = ? WHERE idSala = ?',[padrao5s,id])
+        }
+        if(foto){
+            const [alterRoomPicture] = await db.query('UPDATE sala SET foto = ? WHERE idSala = ?',[foto,id]);
+        }
+        return res.status(204).send();
+    } catch (error) {
+        console.error('Vish',error);
+        return res.status(500).send('Deu Ruim');
+    }
+})
+
+
 app.delete('/deletar/sala/:id',async(req,res)=>{
     const id = parseInt(req.params.id);
     if(!id) return res.status(400).send('Falta Informação');

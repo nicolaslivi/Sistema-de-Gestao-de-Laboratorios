@@ -302,7 +302,7 @@ table {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 55vw;
-    height: 47vh;
+    height: 65vh;
     top: 25%;
     left: 30%;
 }
@@ -357,6 +357,33 @@ table {
     margin-bottom: 2vh;
 }
 
+
+#edit{
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 55vw;
+    height: 65vh;
+    top: 25%;
+    left: 30%;
+}
+
+#edit img{
+    width: 55vw;
+    height: 60vh;
+}
+#edit input{
+    width: 15vw;
+}
+#edit select{
+    width: 15.5vw;
+    height: 4vh;
+}
+
+/* Estilo para o backdrop/overlay */
+#edit::backdrop {
+    background-color: rgba(109, 109, 109, 0.5);
+}
 .popover-container {
     position: relative; /* Define o contexto de posicionamento para o popover  */
     display: inline-block; /* Garante que o contêiner não ocupe a largura total */

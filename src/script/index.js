@@ -1,19 +1,58 @@
 
-const inputBusca = document.getElementById('inputBusca');
-const lupa = document.getElementById('iconLupa');
 let session = localStorage.getItem('dados.session');
 let noma = localStorage.getItem('dados.nome');
 let idProfessor = localStorage.getItem('dados.idProfessor');
+let tabela = document.getElementById('tabela');
+const inputBusca = document.getElementById('inputBusca');
+const lupa = document.getElementById('iconLupa');
 const nome = document.getElementById('name');
 const sair = document.getElementById('sair');
-let tabela = document.getElementById('tabela');
-const modalfiltro = document.getElementById('modal-filtro')
+const modalfiltro = document.getElementById('modal-filtro');
+const blockEdit = document.getElementById('edit');
 
 
 console.log(idProfessor);
 
+function editar(id){
+    const nomeSala = document.getElementById('nomeSalaEdit');
+    const responsavel = document.getElementById('responsavelEdit');
+    const padrao5s = document.getElementById('padrao5sEdit');
+    const instru = document.getElementById('instruEdit');
+    const foto = document.getElementById('fotoEdit');
+    fetch(`http://localhost:3000/sala/${id}`)
+    .then(response=>{
+        if(!response.ok){
+            throw new Error(`Erro HTTP: ${response.status}`)
+        }
+        return response.json()
+    })
+    .then(data=>{
+        foto.src = data[0].foto;
+        nomeSala.value = data[0].nomeSala;
+        responsavel.value = data[0].nome;
+        padrao5s.value = data[0].padrao5S;
+        instru.value = data[0].instrucoes;
+        console.log(data)
+    })
+    .catch(error=>{
+        console.error('Vish',error);
+        
+    })
+    blockEdit.showModal();
+}
+
+
 
 sair.addEventListener('click',async()=>{
+    fetch('http://localhost:3000/logout',{
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${session}`
+        }
+    })
+
     if(window.confirm("Você deseja sair do sistema?")){
         fetch('http://localhost:3000/logout',{
             method: 'POST',
@@ -114,7 +153,6 @@ function verDados(id){
     const padrao5s = document.getElementById('padrao5s');
     const instru = document.getElementById('instru');
     const foto = document.getElementById('foto');
-    // modalfiltro = document.getElementById('modal-filtro')
     fetch(`http://localhost:3000/sala/${id}`)
         .then(response=>{
             if(!response.ok){
@@ -139,7 +177,7 @@ function verDados(id){
 
 console.log(session);
 document.addEventListener('DOMContentLoaded',()=>{
-    let linhaEdit = '<td><div class="status-container"><i class="fa-solid fa-pen" id="editIcon"></i></div></td>'
+    let linhaEdit = '<div class="status-container"><i class="fa-solid fa-pen" id="editIcon"></i></div>'
     let linhaDelete = '<td><div class="status-container"><i class="fa-solid fa-trash-can" id="deleteIcon"></i></div></td>'
     fetch('http://localhost:3000/salas')
         .then(response=>{
@@ -151,7 +189,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         .then(data=>{
             console.log(data);
             for(let x = 0; x < data.length; x++){
-                tabela.innerHTML += `<tr><td scope="row" id="${data[x].idSala}" onclick="verDados(id)">${data[x].nomeSala}</td><td>${data[x].nome}</td><td class="status-container">${data[x].padrao5S}</td>${linhaEdit}<td><div class="status-container"><i class="fa-solid fa-trash-can" id="${data[x].idSala}" onclick="pegarId(id)"></i></div></td></tr>` 
+                tabela.innerHTML += `<tr><td scope="row" id="${data[x].idSala}" onclick="verDados(id)">${data[x].nomeSala}</td><td>${data[x].nome}</td><td class="status-container">${data[x].padrao5S}</td><td id="${data[x].idSala}" onclick="editar(id)">${linhaEdit}</td><td><div class="status-container"><i class="fa-solid fa-trash-can" id="${data[x].idSala}" onclick="pegarId(id)"></i></div></td></tr>` 
             }
 
 
