@@ -301,13 +301,14 @@ table {
     border: none;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 55vw;
-    height: 65vh;
-    top: 25%;
+    width: 65vw;
+    height: 75vh;
+    top: 15%;
     left: 30%;
+    padding: 0%;
 }
 #modal-filtro img{
-    width: 55vw;
+    width: 62vw;
     height: 60vh;
 }
 #modal-filtro input{
@@ -337,6 +338,21 @@ table {
     background-color: rgb(124, 135, 189);
     color: rgb(8, 21, 84);
     border: 1px solid rgb(124, 135, 189);
+}
+
+#close-modal{
+    cursor: pointer;
+}
+
+#topModal{
+    background-color: rgb(8, 21, 84); 
+    color: white; 
+    padding: 5px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 
 .checkbox{

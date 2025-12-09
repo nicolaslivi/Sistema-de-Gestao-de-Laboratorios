@@ -101,24 +101,29 @@
                             </div>
                         </div>
                         <dialog id="modal-filtro">
-                            <h2>Dados Sala</h2>
+                            <div id="topModal">
+                                <h1>Dados Sala</h1>
+                                <i class="fa-solid fa-x" style="position: absolute; left: 95%;" id="close-modal"></i>
                             <br>
-                            <div style="display: flex; flex-direction: column;">
-                                <label>Sala: </label>
-                                <input type="text" id ="nomeSala" disabled>
-                                <label>Responsável: </label>
-                                <input type="text" id ="responsavel" disabled>
-                                <label>Padrão5s: </label>
-                                <input type="text" id ="padrao5s" disabled>
-                                <label>Instruções</label>
-                                <textarea id="instru" disabled style=" resize: none; height: 10vh;"></textarea>
+                            </div>
+                            <div style="display: flex; flex-direction: column; padding: 15px;">
+                                <label style="margin-bottom: 1vh;">Sala: </label>
+                                <input type="text" id ="nomeSala" disabled style="margin-bottom: 2vh;">
+                                <label style="margin-bottom: 1vh;">Responsável: </label>
+                                <input type="text" id ="responsavel" disabled style="margin-bottom: 2vh;">
+                                <label style="margin-bottom: 1vh;">Padrão5s: </label>
+                                <input type="text" id ="padrao5s" disabled style="margin-bottom: 2vh;">
+                                <label style="margin-bottom: 1vh;">Instruções</label>
+                                <textarea id="instru" disabled style=" resize: none; height: 10vh;" style="margin-bottom: 2vh;"></textarea>
                                 <br>
                                 <img src="" id="foto">
                             </div>
-                            <button id="fechar-modal">OK</button>
-                            <a href="./impressao.html">
-                                <button id="fechar-modal">Imprimir</button>
-                            </a>
+                            <div style="padding: 10px;">
+                                <button id="fechar-modal">OK</button>
+                                <a href="./impressao.html">
+                                    <button id="fechar-modal">Imprimir</button>
+                                </a>
+                            </div>
                         </dialog>
                         <dialog id="edit">
                             <h2>Editar</h2>

@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 const modal = document.getElementById('modal-filtro');
 const abrirModalBtn = document.getElementById('iconFiltro');
 const fecharModalBtn = document.getElementById('fechar-modal');
+const closeModalX = document.getElementById('close-modal');
 
 // 2. Adicionar evento para abrir o modal
 // abrirModalBtn.addEventListener('click', () => {
@@ -214,6 +215,11 @@ const fecharModalBtn = document.getElementById('fechar-modal');
 
 // 3. Adicionar evento para fechar o modal
 fecharModalBtn.addEventListener('click', () => {
+    // close() esconde o dialog
+     modalfiltro.close();
+});
+
+closeModalX.addEventListener('click', () => {
     // close() esconde o dialog
      modalfiltro.close();
 });
