@@ -470,3 +470,69 @@ table {
     color: rgb(8, 21, 84);
     border: 1px solid rgb(124, 135, 189);
 }
+
+#editar-modal{
+    background-color: rgb(8, 21, 84);
+    color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(8, 21, 84);
+    font-weight: bolder;
+    height: 4vh;
+    width: 6vw;
+    cursor: pointer;
+    margin-top: 2vh;
+    transition: 0.4s;
+}
+
+@media print{
+    body *{
+        visibility: hidden;
+    }
+    #modal-filtro,
+    #modal-filtro * {
+        visibility: visible;
+    }
+
+    #modal-filtro {
+        position: static;
+        inset: auto;
+        margin: 0;
+        padding: 0;
+        border: none;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+        box-shadow: none;
+  }
+  #openModal{
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  #fechar-modal,
+  #modal-filtro button{
+    display: none !important;
+  }
+  #modal-filtro img{
+    max-height: 50vh;
+  }
+  #openModal{
+    page-break-inside: avoid;
+    break-inside: avoid-page;
+  }
+  #close-modal{
+    display: none;
+  }
+  #modal-filtro input{
+    width: 25vw;
+    border: none;
+  }
+  #instru{
+    border: none;
+  }
+}
+
+#modal-filtro label{
+    font-weight: 660;
+}

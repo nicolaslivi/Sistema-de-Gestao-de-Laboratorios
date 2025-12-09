@@ -1,24 +1,32 @@
+// const { response } = require("express");
 
 let session = localStorage.getItem('dados.session');
 let noma = localStorage.getItem('dados.nome');
 let idProfessor = localStorage.getItem('dados.idProfessor');
 let tabela = document.getElementById('tabela');
+let idUsa = '';
 const inputBusca = document.getElementById('inputBusca');
 const lupa = document.getElementById('iconLupa');
 const nome = document.getElementById('name');
 const sair = document.getElementById('sair');
 const modalfiltro = document.getElementById('modal-filtro');
 const blockEdit = document.getElementById('edit');
-
-
+const editarmodal = document.getElementById('editar-modal');
+const nomeSala = document.getElementById('nomeSalaEdit');
+const responsavel = document.getElementById('responsavelEdit');
+const padrao5s = document.getElementById('padrao5sEdit');
+const instru = document.getElementById('instruEdit');
+const foto = document.getElementById('fotoEdit');
+const buttonLimpar = document.getElementById('buttonLimpar');
 console.log(idProfessor);
 
+
+buttonLimpar.addEventListener('click',()=>{
+    window.location.reload();
+});
+
 function editar(id){
-    const nomeSala = document.getElementById('nomeSalaEdit');
-    const responsavel = document.getElementById('responsavelEdit');
-    const padrao5s = document.getElementById('padrao5sEdit');
-    const instru = document.getElementById('instruEdit');
-    const foto = document.getElementById('fotoEdit');
+    
     fetch(`http://localhost:3000/sala/${id}`)
     .then(response=>{
         if(!response.ok){
@@ -38,8 +46,79 @@ function editar(id){
         console.error('Vish',error);
         
     })
+    idUsa = id;
     blockEdit.showModal();
 }
+
+
+const buttonAplicar = document.getElementById('buttonAplicar');
+buttonAplicar.addEventListener('click',()=>{
+    const padrao = document.getElementsByClassName('padrao');
+    let linhaEdit = '<div class="status-container"><i class="fa-solid fa-pen" id="editIcon"></i></div>'
+    fetch('http://localhost:3000/salas')
+    .then(response=>{
+        if(!response.ok){
+            throw new Error(`Erro HTTP: ${response.status}`)
+        }
+        return response.json()
+    })
+    .then(data=>{
+            tabela.innerHTML = '';
+             for(let x = 0; x < data.length; x++){
+                for(let y = 0; y < padrao.length; y++){
+                    if(padrao[y].checked){
+                        if(padrao[y].value == data[x].padrao5S){
+                            tabela.innerHTML += `<tr><td scope="row" id="${data[x].idSala}" onclick="verDados(id)">${data[x].nomeSala}</td><td>${data[x].nome}</td><td class="status-container">${data[x].padrao5S}</td><td id="${data[x].idSala}" onclick="editar(id)">${linhaEdit}</td><td><div class="status-container"><i class="fa-solid fa-trash-can" id="${data[x].idSala}" onclick="pegarId(id)"></i></div></td></tr>` 
+                        }
+                    }
+                }
+            }
+
+            console.log(data)
+        })
+        .catch(error=>{
+            console.error('Deu ruim',error);
+        });
+});
+
+
+
+editarmodal.addEventListener('click',async()=>{
+
+    if(!nomeSala.value || !instru.value || !padrao5s.value) return alert('Falta informação');
+
+    const dados = {
+        nome: nomeSala.value,
+        instrucoes: instru.value,
+        padrao5s: padrao5s.value
+    }
+    console.log(idUsa);
+    if(window.confirm('Você deseja editar essa sala?')){
+
+        await fetch(`http://localhost:3000/editRoom/${idUsa}`,{
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dados)
+        })
+            .then(response=>{
+                if(!response.ok){
+                    throw new Error(`Erro HTTP: ${response.status}`)
+                }
+                // return response.json();
+            })
+            .then(data=>{
+                console.log(data);
+            })
+            .catch(error=>{
+                console.error('Deu ruim',error);
+            })
+            blockEdit.close();
+            window.location.reload();
+    }
+});
 
 
 
@@ -118,6 +197,11 @@ inputBusca.addEventListener('keyup',async()=>{
 // session = null;
 
 
+function imprimir(){
+    window.print();
+}
+
+
 async function pegarId(id){
     // console.log(id);
     if(window.confirm('Você deseja apagar essa sala?')){
@@ -166,6 +250,8 @@ function verDados(id){
             responsavel.value = data[0].nome;
             padrao5s.value = data[0].padrao5S;
             instru.value = data[0].instrucoes;
+            localStorage.setItem('data.idSala',data[0].idSala);
+            let dataSala = localStorage.getItem('data.idSala');
             console.log(data)
         })
         .catch(error=>{

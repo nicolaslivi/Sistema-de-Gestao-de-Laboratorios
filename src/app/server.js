@@ -66,6 +66,17 @@ app.get('/sala/:id',async(req,res)=>{
         return res.status(500).send('Deu ruim',error);
     }
 })
+app.get('/get/sala',async(req,res)=>{
+    const {padrao} = req.body;
+    if(!padrao) return res.status(400).send('Falta informação');
+    try {
+        const [sala] = await db.query('SELECT sala.idSala,sala.idDoProfessor,sala.nomeSala,sala.padrao5S,sala.foto,sala.instrucoes,professor.nome FROM sala JOIN professor ON sala.idDoProfessor = professor.idProfessor WHERE padrao5S = ?',[padrao]);
+        return res.status(201).send(sala);
+    } catch (error) {
+        console.error('Deu ruim',error);
+        return res.status(500).send('Erro ao buscar no banco',error);
+    }
+})
 
 app.post('/login',async(req,res)=>{
     const {usuario,senha} = req.body;
@@ -112,8 +123,8 @@ app.post('/novoLab',async(req,res)=>{
 })
 
 app.put('/editRoom/:id',async(req,res)=>{
-    const id = parseInt(req.params.id);
-    if(!id) return res.status(400).send('id inválido!');
+    const id = req.params.id
+    if(isNaN(id)) return res.status(400).send('id inválido!');
     const {nome,instrucoes,padrao5s,foto} = req.body;
     if(!nome && !instrucoes && !padrao5s && !foto) return res.status(400).send('Mande pelo menos uma informação!');
     try {

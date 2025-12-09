@@ -75,24 +75,24 @@
                                     <h5>Escolha o Padrão 5S desejado:</h5>
                                 </div>
                                 <div class="conteudoPopover">
-                                    <input type="checkbox">
+                                    <input type="checkbox" value="Seiri" class="padrao">
                                     <p style="margin-left: 1vw;">Seiri</p>
                                 </div>
                                 <div class="conteudoPopover">
-                                    <input type="checkbox">
+                                    <input type="checkbox" value="Seiton" class="padrao">
                                     <p style="margin-left: 1vw;">Seiton</p>
                                 </div>
                                 <div class="conteudoPopover">
-                                    <input type="checkbox">
+                                    <input type="checkbox" value="Seiso" class="padrao">
                                     <p style="margin-left: 1vw;">Seiso</p>
                                 </div>
                                 <div class="conteudoPopover">
-                                    <input type="checkbox">
+                                    <input type="checkbox" value="Shitsuke" class="padrao">
                                     <p style="margin-left: 1vw;">Shitsuke</p>
                                 </div>
                                 <div class="conteudoPopover">
-                                    <input type="checkbox">
-                                    <p style="margin-left: 1vw;">Seiri</p>
+                                    <input type="checkbox" value="Seiketsu" class="padrao">
+                                    <p style="margin-left: 1vw;">Seiketsu</p>
                                 </div>
                                 <div class="conteudoPopover" style="justify-content: space-between; margin-top: 5vh;">
                                     <button id="buttonLimpar">Limpar</button>
@@ -106,7 +106,7 @@
                                 <i class="fa-solid fa-x" style="position: absolute; left: 95%;" id="close-modal"></i>
                             <br>
                             </div>
-                            <div style="display: flex; flex-direction: column; padding: 15px;">
+                            <div style="display: flex; flex-direction: column; padding: 15px;" >
                                 <label style="margin-bottom: 1vh;">Sala: </label>
                                 <input type="text" id ="nomeSala" disabled style="margin-bottom: 2vh;">
                                 <label style="margin-bottom: 1vh;">Responsável: </label>
@@ -120,9 +120,10 @@
                             </div>
                             <div style="padding: 10px;">
                                 <button id="fechar-modal">OK</button>
-                                <a href="./impressao.html">
-                                    <button id="fechar-modal">Imprimir</button>
-                                </a>
+                                <!-- <a href="./impressao.html"> -->
+                                    <!-- <button >Imprimir</button> -->
+                                 <button onclick="imprimir()">Imprimir</button>
+                                <!-- </a> -->
                             </div>
                         </dialog>
                         <dialog id="edit">
@@ -146,7 +147,7 @@
                                 <br>
                                 <img src="" id="fotoEdit">
                             </div>
-                            <button id="fechar-modal">OK</button>
+                            <button id="editar-modal">Editar</button>
                         </dialog>
                         <div class="botaoCadastro-container">
                             <a href="./novoLab.html" style="text-decoration: none;">
