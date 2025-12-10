@@ -536,3 +536,22 @@ table {
 #modal-filtro label{
     font-weight: 660;
 }
+
+#imprimir {
+    background-color: rgb(8, 21, 84);
+    color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(8, 21, 84);
+    font-weight: bolder;
+    height: 4vh;
+    width: 6vw;
+    cursor: pointer;
+    margin-top: 2vh;
+    transition: 0.4s;
+}
+
+#imrpimir:hover{
+    background-color: rgb(124, 135, 189);
+    color: rgb(8, 21, 84);
+    border: 1px solid rgb(124, 135, 189);
+}
