@@ -288,7 +288,6 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 
 // 1. Capturar os elementos do DOM
-const modal = document.getElementById('modal-filtro');
 const abrirModalBtn = document.getElementById('iconFiltro');
 const fecharModalBtn = document.getElementById('fechar-modal');
 const closeModalX = document.getElementById('close-modal');
